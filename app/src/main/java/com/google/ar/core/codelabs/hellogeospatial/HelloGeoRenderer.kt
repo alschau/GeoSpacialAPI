@@ -206,6 +206,7 @@ class HelloGeoRenderer(val activity: HelloGeoActivity) :
     if (earth.trackingState != TrackingState.TRACKING) {
       return
     }
+    // detach anchor if one already exists
     earthAnchor?.detach()
     // Place the earth anchor at the same altitude as that of the camera to make it easier to view.
     val altitude = earth.cameraGeospatialPose.altitude - 1
